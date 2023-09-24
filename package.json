@@ -1,11 +1,15 @@
 {
-  "name": "eslint-plugin-class-trim",
+  "name": "eslint-plugin-trim-class",
   "version": "0.0.1",
   "description": "Simplify and clean up class attributes in your code effortlessly, making your HTML cleaner and more maintainable.",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "trim",
+    "class",
+    "attribute",
+    "html"
   ],
   "author": "Diego Lincoln",
   "main": "./lib/plugins/trimClassAttribute.js",
