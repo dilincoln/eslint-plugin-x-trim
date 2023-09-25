@@ -1,5 +1,5 @@
 /**
- * @fileoverview Simplify and clean up class attributes in your code effortlessly, making your HTML cleaner and more maintainable.
+ * @fileoverview Simplify and clean up tag attributes in your code effortlessly, making your HTML cleaner and more maintainable.
  * @author Diego Lincoln
  */
 'use strict'
@@ -11,7 +11,7 @@ const messageTemplate = require('../../utils/messageTemplate')
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require('../../lib/rules/trimClassAttribute'),
+const rule = require('../../lib/rules/trimTagAttribute'),
 	RuleTester = require('eslint').RuleTester
 
 //------------------------------------------------------------------------------
@@ -24,21 +24,20 @@ ruleTester.run('trim-x-attribute', rule, {
 		{
 			code: '<button class="foo">Submit</button>',
 			filename: 'foo.html',
+			options: [{ fileExtensions: ['.html'], tagAttributes: ['class'] }],
 		},
 		{
 			code: '<button className="foo bar">Submit</button>',
 			filename: 'bar.jsx',
-			options: [{ fileExtensions: ['.jsx'], classAttributes: ['className'] }],
 		},
 		{
 			code: '<button className="foo bar baz">Submit</button>',
 			filename: 'foo.tsx',
-			options: [{ fileExtensions: ['.tsx'], classAttributes: ['className'] }],
 		},
 		{
 			code: '<button ngClass="foo bar baz">Submit</button>',
 			filename: 'bar.html',
-			options: [{ classAttributes: ['ngClass'] }],
+			options: [{ fileExtensions: ['.html'], tagAttributes: ['ngClass'] }],
 		},
 	]),
 	invalid: insertParserOptions([
@@ -47,6 +46,7 @@ ruleTester.run('trim-x-attribute', rule, {
 			code: '<div class="foo "></div>',
 			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
 			output: '<div class="foo"></div>',
+			options: [{ fileExtensions: ['html'], tagAttributes: ['class'] }],
 		},
 		{
 			code: '<div class=" foo "></div>',
@@ -58,6 +58,7 @@ ruleTester.run('trim-x-attribute', rule, {
 			],
 			filename: 'bar.html',
 			output: '<div class="foo"></div>',
+			options: [{ fileExtensions: ['html'], tagAttributes: ['class'] }],
 		},
 		{
 			code: '<div class=" foo bar "></div>',
@@ -69,27 +70,41 @@ ruleTester.run('trim-x-attribute', rule, {
 			],
 			filename: 'foo.html',
 			output: '<div class="foo bar"></div>',
+			options: [{ fileExtensions: ['html'], tagAttributes: ['class'] }],
 		},
 		{
 			filename: 'bar.jsx',
 			code: '<div className="foo "></div>',
 			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
 			output: '<div className="foo"></div>',
-			options: [{ fileExtensions: ['jsx'], classAttributes: ['className'] }],
 		},
 		{
 			filename: 'foo.tsx',
 			code: '<div className="foo "></div>',
 			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
 			output: '<div className="foo"></div>',
-			options: [{ fileExtensions: ['tsx'], classAttributes: ['className'] }],
 		},
 		{
 			filename: 'bar.html',
 			code: '<div ngClass="foo "></div>',
 			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
 			output: '<div ngClass="foo"></div>',
-			options: [{ fileExtensions: ['html'], classAttributes: ['ngClass'] }],
+			options: [{ fileExtensions: ['html'], tagAttributes: ['ngClass'] }],
+		},
+		{
+			filename: 'foo.tsx',
+			code: '<div className=" fixed  h-48 w-full items-end   justify-center bg-gradient-to-t  lg:bg-none"></div>',
+			errors: [
+				{
+					message: messageTemplate(
+						' fixed  h-48 w-full items-end   justify-center bg-gradient-to-t  lg:bg-none',
+						'fixed h-48 w-full items-end justify-center bg-gradient-to-t lg:bg-none'
+					),
+					type: 'JSXAttribute',
+				},
+			],
+			output:
+				'<div className="fixed h-48 w-full items-end justify-center bg-gradient-to-t lg:bg-none"></div>',
 		},
 	]),
 })

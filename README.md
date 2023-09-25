@@ -1,6 +1,6 @@
-# eslint-plugin-class-trim
+# eslint-plugin-trim-x-attribute
 
-Simplify and clean up class attributes in your code effortlessly, making your HTML cleaner and more
+Simplify and clean up tag attributes in your code effortlessly, making your HTML cleaner and more
 maintainable.
 
 ## Installation
@@ -37,8 +37,8 @@ Config example:
 		"trim-x-attribute/trim-x-attribute": [
 			"warn",
 			{
-				"classAttributes": ["className"], // default ["className"]
-				"fileExtensions": ["tsx"] // default ["tsx"]
+				"tagAttributes": ["ngClass"], // default ["class", "className"]
+				"fileExtensions": ["html"] // default ["html" ,"jsx" , "tsx"]
 			}
 		]
 	},

@@ -4,4 +4,12 @@ const parserOptions = {
 	},
 }
 
-module.exports.parserOptions = parserOptions
+const defaultConfig = {
+	tagAttributes: ['class', 'className'],
+	fileExtensions: ['html', 'jsx', 'tsx'],
+}
+
+module.exports = {
+	parserOptions,
+	defaultConfig,
+}
