@@ -44,7 +44,7 @@ ruleTester.run('trim-x-attribute', rule, {
 		{
 			filename: 'foo.html',
 			code: '<div class="foo "></div>',
-			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
+			errors: [{ message: messageTemplate('class', 'foo'), type: 'JSXAttribute' }],
 			output: '<div class="foo"></div>',
 			options: [{ fileExtensions: ['html'], tagAttributes: ['class'] }],
 		},
@@ -52,7 +52,7 @@ ruleTester.run('trim-x-attribute', rule, {
 			code: '<div class=" foo "></div>',
 			errors: [
 				{
-					message: messageTemplate(' foo ', 'foo'),
+					message: messageTemplate('class', 'foo'),
 					type: 'JSXAttribute',
 				},
 			],
@@ -64,7 +64,7 @@ ruleTester.run('trim-x-attribute', rule, {
 			code: '<div class=" foo bar "></div>',
 			errors: [
 				{
-					message: messageTemplate(' foo bar ', 'foo bar'),
+					message: messageTemplate('class', 'foo bar'),
 					type: 'JSXAttribute',
 				},
 			],
@@ -75,19 +75,19 @@ ruleTester.run('trim-x-attribute', rule, {
 		{
 			filename: 'bar.jsx',
 			code: '<div className="foo "></div>',
-			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
+			errors: [{ message: messageTemplate('className', 'foo'), type: 'JSXAttribute' }],
 			output: '<div className="foo"></div>',
 		},
 		{
 			filename: 'foo.tsx',
 			code: '<div className="foo "></div>',
-			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
+			errors: [{ message: messageTemplate('className', 'foo'), type: 'JSXAttribute' }],
 			output: '<div className="foo"></div>',
 		},
 		{
 			filename: 'bar.html',
 			code: '<div ngClass="foo "></div>',
-			errors: [{ message: messageTemplate('foo ', 'foo'), type: 'JSXAttribute' }],
+			errors: [{ message: messageTemplate('ngClass', 'foo'), type: 'JSXAttribute' }],
 			output: '<div ngClass="foo"></div>',
 			options: [{ fileExtensions: ['html'], tagAttributes: ['ngClass'] }],
 		},
@@ -97,7 +97,7 @@ ruleTester.run('trim-x-attribute', rule, {
 			errors: [
 				{
 					message: messageTemplate(
-						' fixed  h-48 w-full items-end   justify-center bg-gradient-to-t  lg:bg-none',
+						'className',
 						'fixed h-48 w-full items-end justify-center bg-gradient-to-t lg:bg-none'
 					),
 					type: 'JSXAttribute',
