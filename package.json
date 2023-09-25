@@ -12,8 +12,8 @@
     "html"
   ],
   "author": "Diego Lincoln",
-  "main": "./lib/plugins/trimClassAttribute.js",
-  "exports": "./lib/plugins/trimClassAttribute.js",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
     "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
