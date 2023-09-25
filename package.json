@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-trim-x-attribute",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simplify and clean up class attributes in your code effortlessly, making your HTML cleaner and more maintainable.",
   "keywords": [
     "eslint",
