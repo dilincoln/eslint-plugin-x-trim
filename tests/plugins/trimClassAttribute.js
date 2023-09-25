@@ -11,7 +11,7 @@ const messageTemplate = require('../../utils/messageTemplate')
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require('../../lib/plugins/trimClassAttribute'),
+const rule = require('../../lib/rules/trimClassAttribute'),
 	RuleTester = require('eslint').RuleTester
 
 //------------------------------------------------------------------------------
