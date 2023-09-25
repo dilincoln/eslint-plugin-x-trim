@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-trim-x-attribute",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simplify and clean up class attributes in your code effortlessly, making your HTML cleaner and more maintainable.",
   "keywords": [
     "eslint",
@@ -11,9 +11,8 @@
     "attribute",
     "html"
   ],
-  "author": "Diego Lincoln",
-  "main": "./lib/index.js",
-  "exports": "./lib/index.js",
+  "author": "Diego Lincoln <diego.lincoln@hotmail.com>",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
     "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
