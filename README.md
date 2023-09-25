@@ -33,8 +33,13 @@ the `eslint-plugin-` prefix:
 Config example:
 
 ```js
-  "trim-x-attribute": ["error", {
-    "classAttributes": ["className", "ngClass"], // default: ["class"]
-    "fileExtensions": ["html", "vue"] // default: ["html"]
-  }]
+	"rules": {
+		"trim-x-attribute/trim-x-attribute": [
+			"warn",
+			{
+				"classAttributes": ["className"], // default ["className"]
+				"fileExtensions": ["tsx"] // default ["tsx"]
+			}
+		]
+	},
 ```
