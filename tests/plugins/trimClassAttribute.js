@@ -19,7 +19,7 @@ const rule = require('../../lib/plugins/trimClassAttribute'),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester()
-ruleTester.run('eslint-trim-x-attribute', rule, {
+ruleTester.run('trim-x-attribute', rule, {
 	valid: insertParserOptions([
 		{
 			code: '<button class="foo">Submit</button>',

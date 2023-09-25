@@ -11,20 +11,20 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-class-trim`:
+Next, install `eslint-plugin-trim-x-attribute`:
 
 ```sh
-npm i eslint-plugin-class-trim --save-dev
+npm i eslint-plugin-trim-x-attribute --save-dev
 ```
 
 ## Usage
 
-Add `class-trim` to the plugins section of your `.eslintrc` configuration file. You can omit the
-`eslint-plugin-` prefix:
+Add `trim-x-attribute` to the plugins section of your `.eslintrc` configuration file. You can omit
+the `eslint-plugin-` prefix:
 
 ```json
 {
-	"plugins": ["class-trim"]
+	"plugins": ["trim-x-attribute"]
 }
 ```
 
@@ -33,7 +33,7 @@ Add `class-trim` to the plugins section of your `.eslintrc` configuration file. 
 Config example:
 
 ```js
-  "eslint-plugin-class-trim": ["error", {
+  "trim-x-attribute": ["error", {
     "classAttributes": ["className", "ngClass"], // default: ["class"]
     "fileExtensions": ["html", "vue"] // default: ["html"]
   }]
