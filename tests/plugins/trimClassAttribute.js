@@ -1,5 +1,5 @@
 /**
- * @fileoverview Simplify and clean up tag attributes in your code effortlessly, making your HTML cleaner and more maintainable.
+ * @fileoverview Simplify and clean up tag attributes in your code effortlessly, making your HTML tags cleaner and more maintainable.
  * @author Diego Lincoln
  */
 'use strict'

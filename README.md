@@ -1,7 +1,7 @@
 # eslint-plugin-trim-x-attribute
 
-Simplify and clean up tag attributes in your code effortlessly, making your HTML cleaner and more
-maintainable.
+Simplify and clean up tag attributes in your code effortlessly, making your HTML tags cleaner and
+more maintainable.
 
 ## Installation
 
